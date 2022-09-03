@@ -1,6 +1,8 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 function Navbar() {
+  const amount = useSelector(state=> state.amount);
   return (
     <>
       <div>
@@ -36,8 +38,8 @@ function Navbar() {
                   </Link>
                 </li>
               </ul>
-              <button className="btn btn-danger" disabled="true">
-                Bank Money : 1000
+              <button className="btn btn-danger" disabled={true}>
+                Bank Money : {amount}
               </button>
             </div>
           </div>
